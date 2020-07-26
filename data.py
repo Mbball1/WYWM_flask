@@ -9,8 +9,5 @@ employees = [
     {"company": 8, "id":8, "firstname":"jane", "lastName":"bloggs"},
     {"company": 9, "id":9, "firstName":"michael","lastName":"bloggs"}
 ]
-test = 3
-for employee in employees:
-    if test == employee["company"]:
-        print(employee)
+
 

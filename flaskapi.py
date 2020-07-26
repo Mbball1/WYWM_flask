@@ -1,6 +1,7 @@
 from flask import Flask, json
-#from flask_api import status
 import data
+from flask_api import status
+
 
 print(data.employees)
 
@@ -62,11 +63,11 @@ def update_employee(company, id, firstName, lastName):
   for employee in data.employees:
     if employeeUpdate == employee:
       employee = employeeUpdate
-      #return status.HTTP_204_NO_CONTENT
+      return status.HTTP_204_NO_CONTENT
     else:
       data.employees.append(employeeUpdate)
       message = "Employee has been added."
-      #return message, status.HTPP_201_CREATED
+      return message, status.HTPP_201_CREATED
 
 if __name__ == '__main__':
     api.run()
