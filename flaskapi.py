@@ -1,6 +1,6 @@
 from flask import Flask, json
 import data
-from flask_api import status
+
 
 
 print(data.employees)
@@ -19,7 +19,7 @@ companies = [
 
 api = Flask(__name__)
 
-@api.route('/home', methods=['GET'])
+@api.route('/', methods=['GET'])
 def show_home_message():
   message = ("This is the home page.")
   return json.dumps(message)
