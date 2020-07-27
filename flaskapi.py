@@ -55,19 +55,19 @@ def get_all_employees():
 def post_companies():
   return json.dumps({"success": True}), 201 
 
-@api.route('/employees/<int:company>/<int:id>/firstName/lastName', methods=['PUT'])
-def update_employee(company, id, firstName, lastName):
+@api.route('/employees/<int:id>', methods=['PUT'])
+def update_employee(id):
   """This will see if the data given matches that of an employee in the system. If it does
   it will replace the data and return XXXXXX else it will create a new entry and return XXXXX """
-  employeeUpdate = {"company":company, "id":id, "firstName":firstName, "lastName":lastName}
-  for employee in data.employees:
-    if employeeUpdate == employee:
-      employee = employeeUpdate
-      return status.HTTP_204_NO_CONTENT
-    else:
-      data.employees.append(employeeUpdate)
-      message = "Employee has been added."
-      return message, status.HTPP_201_CREATED
+  employeeUpdate = {"id":id}
+  # for employee in data.employees:
+  #   if employeeUpdate == employee.id:
+  #     employee = employeeUpdate
+  #     return status.HTTP_204_NO_CONTENT
+  #   else:
+  #     data.employees.append(employeeUpdate)
+  #     message = "Employee has been added."
+  #     return message, status.HTPP_201_CREATED
 
 if __name__ == '__main__':
     api.run()
