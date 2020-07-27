@@ -1,8 +1,6 @@
 from flask import Flask, json
 import data
 
-
-
 print(data.employees)
 
 companies = [
@@ -45,7 +43,6 @@ def get_company_employees(company):
   for employee in data.employees:
     if companyNumber == employee["company"]:
         return json.dumps(employee)
-
 
 @api.route('/employees', methods=['GET'])
 def get_all_employees():
